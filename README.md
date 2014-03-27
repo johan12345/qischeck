@@ -1,9 +1,11 @@
 ﻿QISCheck
 ========
 
+Fork der Original-App von Christian Caspers für die HS Rhein-Main https://github.com/ccaspers/qischeck
+
 Einfache Android-App zum Anzeigen des Notenspiegels aus dem QIS-System
-der Hochschule RheinMain. Da keine API vorhanden ist wird die Internetseite mit JSoup
-geparsed. Aktuell wird nur der Studiengang Medieninformatik unterstützt.
+der Uni Kiel. Da keine API vorhanden ist wird die Internetseite mit JSoup
+geparsed. Aktuell wird nur der Studiengang Physik unterstützt.
 
 
 ##Features
