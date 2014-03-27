@@ -2,14 +2,13 @@ package net.pixeltronics.qischeck.ui;
 
 import net.pixeltronics.qischeck.R;
 import net.pixeltronics.qischeck.sync.SyncService;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.actionbarsherlock.app.SherlockActivity;
-
-public class LoginActivity extends SherlockActivity {
+public class LoginActivity extends Activity {
 	
 	public static final String TAG = "LoginActivity";
 	

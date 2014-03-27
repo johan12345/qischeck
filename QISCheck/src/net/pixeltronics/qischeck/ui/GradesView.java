@@ -11,18 +11,17 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 
 /**
  * Android Activity zum Darstellen einer Notenliste
@@ -30,7 +29,7 @@ import com.actionbarsherlock.view.MenuItem;
  * @author Christian Caspers
  *
  */
-public class GradesView extends SherlockFragmentActivity implements LoaderCallbacks<Cursor> {
+public class GradesView extends FragmentActivity implements LoaderCallbacks<Cursor> {
 	
 	private static final int LIST_VIEW = R.id.grades_list;
 
@@ -72,7 +71,7 @@ public class GradesView extends SherlockFragmentActivity implements LoaderCallba
 
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    	getSupportMenuInflater().inflate(R.menu.activity_grades_view, menu);
+    	getMenuInflater().inflate(R.menu.activity_grades_view, menu);
     	return true;
     }
 	

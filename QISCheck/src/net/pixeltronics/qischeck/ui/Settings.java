@@ -14,12 +14,11 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
 
-import com.actionbarsherlock.app.SherlockPreferenceActivity;
-
-public class Settings extends SherlockPreferenceActivity {
+public class Settings extends PreferenceActivity {
 
 	private static final String PREFS_NAME = "qis_prefs";
 	private static final String LASTSYNC = "lastsync";

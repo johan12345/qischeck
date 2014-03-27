@@ -35,10 +35,11 @@ public class QIS {
 	private static final String INPUT_USERNAME = "asdf";
 	private static final String INPUT_PASSWORD = "fdsa";
 	
-	private static String LOGIN_URL  = "https://qis.hs-rm.de/qisserver/rds?state=user&type=1&category=auth.login&startpage=portal.vm&breadCrumbSource=portal";
-	private static String ASI_URL    = "https://qis.hs-rm.de/qisserver/rds?state=change&type=1&moduleParameter=studyPOSMenu&nextdir=change&next=menu.vm&subdir=applications&xml=menu&purge=y&navigationPosition=functions%2CstudyPOSMenu&breadcrumb=studyPOSMenu&topitem=functions&subitem=studyPOSMenu";
-	private static String GRADES_URL = "https://qis.hs-rm.de/qisserver/rds?state=notenspiegelStudent&next=list.vm&nextdir=qispos/notenspiegel/student&createInfos=Y&struct=auswahlBaum&nodeID=auswahlBaum%7Cabschluss%3Aabschl%3D84%2Cstgnr%3D1%7Cstudiengang%3Astg%3DIDB&expand=0&asi=${ASI}";
-	private static String LOGOUT_URL = "https://qis.hs-rm.de/qisserver/rds?state=user&type=4&re=last&category=auth.logout&breadCrumbSource=&topitem=functions";
+	private static String BASE_URL = "https://qis.zentr-verw.uni-kiel.de/uki/";
+	private static String LOGIN_URL  = BASE_URL + "rds?state=user&type=1&category=auth.login&startpage=portal.vm&breadCrumbSource=portal";
+	private static String ASI_URL    = BASE_URL + "rds?state=change&type=1&moduleParameter=studyPOSMenu&nextdir=change&next=menu.vm&subdir=applications&xml=menu&purge=y&navigationPosition=functions%2CstudyPOSMenu&breadcrumb=studyPOSMenu&topitem=functions&subitem=studyPOSMenu";
+	private static String GRADES_URL = BASE_URL + "rds?state=notenspiegelStudent&next=list.vm&nextdir=qispos/notenspiegel/student&createInfos=Y&struct=auswahlBaum&nodeID=auswahlBaum%7Cabschluss%3Aabschl%3D82%2Cstgnr%3D1&expand=0&asi=${ASI}";
+	private static String LOGOUT_URL = BASE_URL + "rds?state=user&type=4&re=last&category=auth.logout&breadCrumbSource=&topitem=functions";
 
 	private String username;
 	private String password;
@@ -77,8 +78,8 @@ public class QIS {
 	}
 	
 	/**
-	 * Stellt eine Anfrage an den Server, parsed den Notenspiegel und überführt
-	 * ihn in eine Liste aus Key-Value-Paaren für Noten
+	 * Stellt eine Anfrage an den Server, parsed den Notenspiegel und Ã¼berfÃ¼hrt
+	 * ihn in eine Liste aus Key-Value-Paaren fÃ¼r Noten
 	 * 
 	 * @return
 	 * @throws ClientProtocolException
@@ -91,7 +92,7 @@ public class QIS {
 	}
 	
 	/**
-	 * Stellt eine Anfrage an den Server, parsed den Notenspiegel und überführt
+	 * Stellt eine Anfrage an den Server, parsed den Notenspiegel und Ã¼berfÃ¼hrt
 	 * ihn in eine Liste aus Key-Value-Paaren für Fächer
 	 * 
 	 * @return

@@ -16,7 +16,7 @@ import android.content.ContentValues;
 public class MIParser implements WebParser {
 	
 	private static final String[] gradeMapping =  
-			new String[]{Grade._ID, Grade.TITLE, Grade.SEMESTER, Grade.DATE, Grade.RESULT, Grade.STATUS, Grade.CP, Grade.COMMENT, Grade.ATTEMPT};
+			new String[]{Grade._ID, Grade.TITLE, Grade.RESULT, Grade.STATUS, Grade.SEMESTER, Grade.ATTEMPT};
 	
 	private static final String[] categoryMapping =
 			new String[] {Category._ID, Category.TITLE, Category.RESULT, Category.STATUS, Category.CP};
@@ -31,7 +31,8 @@ public class MIParser implements WebParser {
 
 		for (Element row : rows){
 			int count = row.getElementsByAttributeValueNot("class", "qis_kontoOnTop").size();
-			if(count > 2){
+			boolean isPruefung = row.getElementsByClass("tabelle1_aligncenter").size() > 0;
+			if(count > 2 && isPruefung){
 				ArrayList<String> cells = extractCellsFromRow(row);
 				if(!cells.isEmpty()){
 					ContentValues g = mapCellsToKeys(cells,gradeMapping);
@@ -84,7 +85,7 @@ public class MIParser implements WebParser {
 	private Elements findTable(String html) {
 		html = html.replaceAll("\n|\r|\t|(&nbsp;)|(<!--\\s*-->)", "");
 		Document doc = Jsoup.parse(html);
-		Element table = doc.getElementsByTag("table").get(1);
+		Element table = doc.getElementsByTag("table").get(2);
 		Elements rows = table.getElementsByTag("tr");
 		rows.remove(0);
 		rows.remove(0);
