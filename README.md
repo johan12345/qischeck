@@ -16,9 +16,6 @@ geparsed. Aktuell wird nur der Studiengang Physik unterstützt.
 
 ![Screenshot][1]
 
-##Download
-* Dropbox: https://dl.dropbox.com/u/6910770/QISCheck.apk
-
 ##Hinweis
 Die Zugangsdaten zum QIS-System werden in den SharedPreferences im Klartext gespeichert.
 Auf Geräten mit Root-Zugriff stellt das ein Sicherheitsrisiko dar, da andere Anwendungen
